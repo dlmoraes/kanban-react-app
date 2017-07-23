@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Panel from './../components/Panel'
+import Card from './../components/Card'
 
 import './Home.scss'
 
@@ -12,7 +13,9 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Panel />
+                <Panel>
+
+                </Panel>
             </div>
         )
     }
