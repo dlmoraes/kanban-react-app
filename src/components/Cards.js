@@ -8,12 +8,12 @@ class Cards extends Component {
     }
 
     render() {
+        const cards = this.props.cards.map(card => (
+            <Card key={card.id} />
+        ))
         return (
             <ul>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {cards}
             </ul>
         )
     }
