@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Panel from './../components/Panel'
 
 import './Home.scss'
 
@@ -11,7 +12,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1>Kanban Board React.js Redux</h1>
+                <Panel />
             </div>
         )
     }
