@@ -13,9 +13,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Panel>
-
-                </Panel>
+                <Panel />
             </div>
         )
     }

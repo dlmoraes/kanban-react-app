@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 class Card extends Component {
-
     constructor(props) {
         super(props)
     }
@@ -9,11 +8,10 @@ class Card extends Component {
     render() {
         return (
             <li className="col-xs-12">
-                Task 1
+                {this.props.children}
             </li>
         )
     }
-
 }
 
 export default Card
