@@ -4,6 +4,8 @@ class InputEditable extends Component {
 
     constructor(props) {
         super(props)
+
+        this.handleClickToEdit = this.handleClickToEdit.bind(this)
     }
 
     renderEditable() {
@@ -17,6 +19,11 @@ class InputEditable extends Component {
         )
     }
 
+    handleClickToEdit() {
+        const { id } = this.props
+        this.props.clickToEdit(id)
+    }
+
     renderText() {
         return (
             <div>
@@ -24,6 +31,7 @@ class InputEditable extends Component {
                     <input type="text"
                         className="form-control"
                         defaultValue={this.props.text}
+                        onClick={this.handleClickToEdit}
                         readOnly />
                 </div>
             </div>

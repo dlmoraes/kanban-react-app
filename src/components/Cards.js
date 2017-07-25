@@ -15,6 +15,7 @@ class Cards extends Component {
                     id={card.id}
                     edit={card.edit}
                     text={card.text}
+                    clickToEdit={this.props.clickToEdit}
                 />
             </Card>
         ))
