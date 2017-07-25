@@ -29,7 +29,10 @@ class Panel extends Component {
                         <h2>MY PANEL</h2>
                     </div>
                     <div className="panel-body">
-                        <Cards cards={cards} clickToEdit={this.props.editCard} />
+                        <Cards cards={cards}
+                            clickToEdit={this.props.editCard}
+                            editCard={this.props.editCard}
+                        />
                     </div>
                     <div className="panel-footer">
                         <button className="btn btn-primary" onClick={this.handleCreateCard}>
@@ -52,8 +55,14 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         createCard: () => dispatch(CardActions.createCard('New Task')),
-        editCard: (id) => {
+        editCard: (id, value) => {
             const edited = { id, edit: true }
+            if (!value) {
+                edited.edit = true
+            } else {
+                edited.edit = false
+                edited.text = value
+            }
             dispatch(CardActions.editCard(edited))
         }
     }
