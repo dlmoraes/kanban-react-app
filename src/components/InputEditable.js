@@ -7,6 +7,7 @@ class InputEditable extends Component {
 
         this.handleClickToEdit = this.handleClickToEdit.bind(this)
         this.handleEditCard = this.handleEditCard.bind(this)
+        this.handleDeleteCard = this.handleDeleteCard.bind(this)
     }
 
     handleEditCard(e) {
@@ -18,6 +19,11 @@ class InputEditable extends Component {
         if (text.trim().length) {
             this.props.editCard(id, text)
         }
+    }
+
+    handleDeleteCard() {
+        const { id } = this.props
+        this.props.deleteCard(id)
     }
 
     renderEditable() {
@@ -47,6 +53,9 @@ class InputEditable extends Component {
                         defaultValue={this.props.text}
                         onClick={this.handleClickToEdit}
                         readOnly />
+                </div>
+                <div className="col-xs-2" onClick={this.handleDeleteCard}>
+                    <i className="ion-trash-b"></i>
                 </div>
             </div>
         )
