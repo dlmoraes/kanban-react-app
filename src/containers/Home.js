@@ -29,6 +29,7 @@ class Home extends Component {
                 <Panels
                     panels={panels}
                     editPanel={this.props.editPanel}
+                    deletePanel={this.props.deletePanel}
                 />
             </div>
         )
@@ -54,7 +55,8 @@ const mapDispatchToProps = (dispatch) => {
                 edited.text = value
             }
             dispatch(PanelActions.editPanel(edited))
-        }
+        },
+        deletePanel: (id) => dispatch(PanelActions.deletePanel(id))
     }
 }
 

@@ -19,7 +19,17 @@ const editPanel = (edited) => {
     }
 }
 
+const deletePanel = (id) => {
+    return {
+        type: ActionTypes.DELETE_PANEL,
+        payload: {
+            id
+        }
+    }
+}
+
 export default {
     createPanel,
-    editPanel
+    editPanel,
+    deletePanel
 }

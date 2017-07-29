@@ -7,7 +7,7 @@ class InputEditable extends Component {
 
         this.handleClickToEdit = this.handleClickToEdit.bind(this)
         this.handleEdit = this.handleEdit.bind(this)
-        this.handleDeleteCard = this.handleDeleteCard.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     handleEdit(e) {
@@ -21,9 +21,9 @@ class InputEditable extends Component {
         }
     }
 
-    handleDeleteCard() {
+    handleDelete() {
         const { id } = this.props
-        this.props.deleteCard(id)
+        this.props.deleteComponent(id)
     }
 
     renderEditable() {
@@ -54,7 +54,7 @@ class InputEditable extends Component {
                         onClick={this.handleClickToEdit}
                         readOnly />
                 </div>
-                <div className="col-xs-2" onClick={this.handleDeleteCard}>
+                <div className="col-xs-2" onClick={this.handleDelete}>
                     <i className="ion-trash-b"></i>
                 </div>
             </div>
