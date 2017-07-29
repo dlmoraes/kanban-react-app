@@ -6,18 +6,18 @@ class InputEditable extends Component {
         super(props)
 
         this.handleClickToEdit = this.handleClickToEdit.bind(this)
-        this.handleEditCard = this.handleEditCard.bind(this)
+        this.handleEdit = this.handleEdit.bind(this)
         this.handleDeleteCard = this.handleDeleteCard.bind(this)
     }
 
-    handleEditCard(e) {
+    handleEdit(e) {
         if (e.type === 'keypress' && e.key !== 'Enter') {
             return
         }
         const text = e.target.value
         const { id } = this.props
         if (text.trim().length) {
-            this.props.editCard(id, text)
+            this.props.editComponent(id, text)
         }
     }
 
@@ -32,8 +32,8 @@ class InputEditable extends Component {
                 <input type="text"
                     className="form-control"
                     defaultValue={this.props.text}
-                    onBlur={this.handleEditCard}
-                    onKeyPress={this.handleEditCard}
+                    onBlur={this.handleEdit}
+                    onKeyPress={this.handleEdit}
                 />
             </div>
         )

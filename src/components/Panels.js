@@ -8,8 +8,10 @@ class Panels extends Component {
 
     render() {
         const panels = this.props.panels.map(panel => (
-            <Panel 
+            <Panel
                 key={panel.id}
+                panel={panel}
+                editPanel={this.props.editPanel}
             />
         ))
         return (

@@ -8,6 +8,13 @@ export default function panels(state = [], action) {
                 action.payload
             ]
             break;
+        case ActionTypes.EDIT_PANEL:
+            return state.map(panel => {
+                const { id } = action.payload
+                if (id === panel.id) return Object.assign({}, panel, action.payload)
+                return panel
+            })
+            break;
         default:
             return state
     }

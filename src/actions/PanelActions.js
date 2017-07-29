@@ -12,6 +12,14 @@ const createPanel = (value) => {
     }
 }
 
+const editPanel = (edited) => {
+    return {
+        type: ActionTypes.EDIT_PANEL,
+        payload: edited
+    }
+}
+
 export default {
-    createPanel
+    createPanel,
+    editPanel
 }
