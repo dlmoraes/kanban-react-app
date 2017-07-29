@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Panel from './../components/Panel'
-import Card from './../components/Card'
+import Panels from './../components/Panels'
+
 
 import './Home.scss'
 
@@ -13,7 +13,14 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Panel />
+                <div className="col-xs-12">
+                    <button className="btn btn-primary">
+                        <i className="ion-plus-round"></i> New Panel
+                    </button>
+                </div>
+                <Panels 
+                    panels={[]}
+                />
             </div>
         )
     }
