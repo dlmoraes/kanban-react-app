@@ -6,7 +6,7 @@ const createPanel = (value) => {
         type: ActionTypes.CREATE_PANEL,
         payload: {
             id: uuid(),
-            name: value,
+            text: value,
             cards: []
         }
     }
@@ -28,8 +28,19 @@ const deletePanel = (id) => {
     }
 }
 
+const move = (id, monitorId) => {
+    return {
+        type: ActionTypes.MOVE_PANEL,
+        payload: {
+            id,
+            monitorId
+        }
+    }
+}
+
 export default {
     createPanel,
     editPanel,
-    deletePanel
+    deletePanel,
+    move
 }
