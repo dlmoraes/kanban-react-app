@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { DragSource, DropTarget } from 'react-dnd'
 
 import CardActions from './../actions/CardActions'
+import PanelActions from './../actions/PanelActions'
 import InputEditable from './InputEditable'
 import * as Types from './../constants/Types'
 
@@ -49,6 +50,7 @@ class Panel extends Component {
                                     clickToEdit={this.props.editCard}
                                     editCard={this.props.editCard}
                                     deleteCard={this.props.deleteCard}
+                                    moveCard={this.props.moveCard}
                                 />
                             </div>
                             <div className="panel-footer">
@@ -84,7 +86,8 @@ const mapDispatchToProps = (dispatch) => {
             }
             dispatch(CardActions.editCard(edited))
         },
-        deleteCard: (id) => dispatch(CardActions.deleteCard(id))
+        deleteCard: (id) => dispatch(CardActions.deleteCard(id)),
+        moveCard: (id, monitorId) => dispatch(PanelActions.moveCard(id, monitorId))
     }
 }
 
